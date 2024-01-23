@@ -8,6 +8,7 @@
               pluginAAXCategory="0,16">
   <MAINGROUP id="pWx057" name="Rvrsr">
     <GROUP id="{7D751651-75B2-14C2-BA97-104B93314D05}" name="Source">
+      <FILE id="TGeblc" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>
       <FILE id="jwPcIw" name="PluginLookAndFeel.h" compile="0" resource="0"
             file="Source/PluginLookAndFeel.h"/>
       <FILE id="UA00uP" name="PluginProcessor.h" compile="0" resource="0"
