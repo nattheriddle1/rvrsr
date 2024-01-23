@@ -8,7 +8,7 @@
     <key>CFBundleIconFile</key>
     <string></string>
     <key>CFBundleIdentifier</key>
-    <string>com.yourcompany.Rvrsr</string>
+    <string>com.NatRiddle.Rvrsr</string>
     <key>CFBundleName</key>
     <string>Rvrsr</string>
     <key>CFBundleDisplayName</key>
@@ -22,16 +22,16 @@
     <key>CFBundleVersion</key>
     <string>1.0.0</string>
     <key>NSHumanReadableCopyright</key>
-    <string></string>
+    <string>&#169;2023 by Nat Riddle</string>
     <key>NSHighResolutionCapable</key>
     <true/>
     <key>AudioComponents</key>
     <array>
       <dict>
         <key>name</key>
-        <string>yourcompany: Rvrsr</string>
+        <string>Nat Riddle: Rvrsr</string>
         <key>description</key>
-        <string>Rvrsr</string>
+        <string>A reverse delay plugin</string>
         <key>factoryFunction</key>
         <string>RvrsrAUFactory</string>
         <key>manufacturer</key>
