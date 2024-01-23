@@ -1,11 +1,11 @@
-/*
-  ==============================================================================
+#include <JuceHeader.h>
+#include "PluginProcessor.h"
+#include "PluginEditor.h"
 
-    Main.cpp
-    Created: 22 Jan 2024 11:55:31pm
-    Author:  Nat Riddle
+juce::AudioProcessorEditor *RvrsrAudioProcessor::createEditor() {
+    return new RvrsrAudioProcessorEditor(*this);
+};
 
-  ==============================================================================
-*/
-
-#include "Main.h"
+juce::AudioProcessor *JUCE_CALLTYPE createPluginFilter() {
+    return new RvrsrAudioProcessor();
+}
