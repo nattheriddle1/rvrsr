@@ -56,10 +56,10 @@
  #define JucePlugin_ManufacturerEmail      "nattheriddle1@gmail.com"
 #endif
 #ifndef  JucePlugin_ManufacturerCode
- #define JucePlugin_ManufacturerCode       0x4d616e75
+ #define JucePlugin_ManufacturerCode       0x4e617472
 #endif
 #ifndef  JucePlugin_PluginCode
- #define JucePlugin_PluginCode             0x59647774
+ #define JucePlugin_PluginCode             0x52767273
 #endif
 #ifndef  JucePlugin_IsSynth
  #define JucePlugin_IsSynth                0
@@ -155,7 +155,7 @@
  #define JucePlugin_ARAFactoryID           "com.NatRiddle.Rvrsr.factory"
 #endif
 #ifndef  JucePlugin_ARADocumentArchiveID
- #define JucePlugin_ARADocumentArchiveID   "com.NatRiddle.Rvrsr.aradocumentarchive.1.0.0"
+ #define JucePlugin_ARADocumentArchiveID   "com.NatRiddle.Rvrsr.aradocumentarchive.0.3.0"
 #endif
 #ifndef  JucePlugin_ARACompatibleArchiveIDs
  #define JucePlugin_ARACompatibleArchiveIDs  ""

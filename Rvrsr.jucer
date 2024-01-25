@@ -5,7 +5,8 @@
               companyName="Nat Riddle" companyCopyright="&#169;2023 by Nat Riddle"
               companyEmail="nattheriddle1@gmail.com" companyWebsite="github.com/nattheriddle1"
               pluginDesc="A reverse delay plugin" pluginVST3Category="Delay,Fx"
-              pluginAAXCategory="0,16" version="0.3.0">
+              pluginAAXCategory="0,16" version="0.3.0" pluginManufacturerCode="Natr"
+              pluginCode="Rvrs">
   <MAINGROUP id="pWx057" name="Rvrsr">
     <GROUP id="{7D751651-75B2-14C2-BA97-104B93314D05}" name="Source">
       <FILE id="TGeblc" name="Main.cpp" compile="1" resource="0" file="Source/Main.cpp"/>

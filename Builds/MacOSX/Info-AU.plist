@@ -35,11 +35,11 @@
         <key>factoryFunction</key>
         <string>RvrsrAUFactory</string>
         <key>manufacturer</key>
-        <string>Manu</string>
+        <string>Natr</string>
         <key>type</key>
         <string>aufx</string>
         <key>subtype</key>
-        <string>Ydwt</string>
+        <string>Rvrs</string>
         <key>version</key>
         <integer>768</integer>
         <key>resourceUsage</key>
