@@ -2,10 +2,10 @@
 
 <JUCERPROJECT id="YDwTyH" name="Rvrsr" projectType="audioplug" useAppConfig="0"
               addUsingNamespaceToJuceHeader="0" displaySplashScreen="1" jucerFormatVersion="1"
-              companyName="Nat Riddle" companyCopyright="&#169;2023 by Nat Riddle"
+              companyName="Nat Riddle" companyCopyright="&#169;2024 by Nat Riddle"
               companyEmail="nattheriddle1@gmail.com" companyWebsite="github.com/nattheriddle1"
               pluginDesc="A reverse delay plugin" pluginVST3Category="Delay,Fx"
-              pluginAAXCategory="0,16" version="0.3.0" pluginManufacturerCode="Natr"
+              pluginAAXCategory="0,16" version="0.4.0" pluginManufacturerCode="Natr"
               pluginCode="Rvrs">
   <MAINGROUP id="pWx057" name="Rvrsr">
     <GROUP id="{7D751651-75B2-14C2-BA97-104B93314D05}" name="Source">
