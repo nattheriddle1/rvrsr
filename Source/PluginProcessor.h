@@ -78,7 +78,7 @@ public:
 #endif
 
     void processBlock(juce::AudioBuffer<float> &audio_buffer, juce::MidiBuffer &midi_buffer) override {
-        juce::AudioPlayHead *playHead = getPlayHead();
+        playHead = getPlayHead();
         for (int i = 0; i < audio_buffer.getNumSamples(); i++) {
             juce::AudioPlayHead::PositionInfo info = playHead->getPosition()
                 .orFallback(juce::AudioPlayHead::PositionInfo{});
@@ -223,6 +223,8 @@ public:
     const float stereo_maximum = 1.0f;
     const float stereo_interval = 0.01f;
     const float stereo_default = 0.0f;
+
+    juce::AudioPlayHead *playHead;
 
 private:
     juce::AudioBuffer<float> cache;

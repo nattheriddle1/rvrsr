@@ -7,6 +7,7 @@
 class RvrsrAudioProcessorEditor :
     public juce::AudioProcessorEditor,
     public juce::Slider::Listener,
+    public juce::Button::Listener,
     public juce::Timer {
 
 public:
@@ -14,7 +15,7 @@ public:
         AudioProcessorEditor(&p), audioProcessor(p) {
         startTimerHz(30);
         setLookAndFeel(&lookAndFeel);
-        setSize(515, 215);
+        setSize(515, 235);
 
         addAndMakeVisible(dry_in_slider);
         dry_in_slider.setRange(p.dry_in_minimum, p.dry_in_maximum, p.dry_in_interval);
@@ -119,6 +120,13 @@ public:
         stereo_label.setText(stereo_slider.getName(), juce::NotificationType::dontSendNotification);
         stereo_label.setJustificationType(juce::Justification::horizontallyCentred);
         stereo_label.attachToComponent(&stereo_slider, false);
+
+        addAndMakeVisible(delay_sync_button);
+        addAndMakeVisible(delay_half_button);
+        addAndMakeVisible(delay_double_button);
+        delay_sync_button.addListener(this);
+        delay_half_button.addListener(this);
+        delay_double_button.addListener(this);
     };
 
     ~RvrsrAudioProcessorEditor() override {
@@ -140,13 +148,16 @@ public:
         g.setColour(findColour(RvrsrLookAndFeel::ColourScheme::defaultFill));
         g.fillRect(20, 30, getWidth() - 140, 2);
         g.setColour(findColour(juce::DocumentWindow::backgroundColourId).darker(0.5));
-        g.fillRect(74, 60, 2, 127);
-        g.fillRect(404, 60, 2, 127);
+        g.fillRect(74, 60, 2, 147);
+        g.fillRect(404, 60, 2, 147);
     };
 
     void resized() override {
         dry_in_slider.setBounds(16, 77, 40, 119);
         delay_slider.setBounds(84, 77, 110, 110);
+        delay_half_button.setBounds(80, 200, 24, 20);
+        delay_sync_button.setBounds(110, 200, 60, 20);
+        delay_double_button.setBounds(180, 200, 24, 20);
         muting_slider.setBounds(184, 77, 110, 110);
         stereo_slider.setBounds(284, 77, 110, 110);
         wet_out_slider.setBounds(427, 77, 30, 119);
@@ -175,6 +186,27 @@ public:
         }
     };
 
+    void buttonClicked(juce::Button *button) override {
+        if (button == &delay_sync_button) {
+            audioProcessor.delay_parameter->setValueNotifyingHost(
+                audioProcessor.delay_parameter->convertTo0to1(
+                    (60*audioProcessor.getSampleRate()) / (int) audioProcessor.playHead->getPosition()->getBpm().orFallback(120)
+                ));
+        } else if (button == &delay_half_button) {
+            audioProcessor.delay_parameter->setValueNotifyingHost(
+                audioProcessor.delay_parameter->convertTo0to1(
+                    audioProcessor.delay_parameter->get() / 2
+                )
+            );
+        } else if (button == &delay_double_button) {
+            audioProcessor.delay_parameter->setValueNotifyingHost(
+                audioProcessor.delay_parameter->convertTo0to1(
+                    audioProcessor.delay_parameter->get() * 2
+                )
+            );
+        }
+    }
+
     void timerCallback() override {
         dry_in_slider.setValue(audioProcessor.dry_in_parameter->get(),
             juce::NotificationType::dontSendNotification);
@@ -192,6 +224,9 @@ public:
 
 private:
     RvrsrLookAndFeel lookAndFeel;
+    juce::TextButton delay_sync_button{"Tempo", "Sync to tempo"};
+    juce::TextButton delay_half_button{juce::CharPointer_UTF8 ("\xc3\xb7""2"), "Half time"};
+    juce::TextButton delay_double_button{juce::CharPointer_UTF8 ("\xc3\x97""2"), "Double time"};
     juce::Slider dry_in_slider;
     juce::Label dry_in_label;
     juce::Slider dry_out_slider;

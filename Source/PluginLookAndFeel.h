@@ -23,6 +23,7 @@ public:
             juce::Colour(0.08f, 0.18f, 0.20f, 1.0f));
         setColour(juce::Slider::ColourIds::trackColourId,
             juce::Colour(0.08f, 0.18f, 0.45f, 1.0f));
+
         setColour(juce::Slider::ColourIds::textBoxBackgroundColourId,
             juce::Colour(0.08f, 0.18f, 0.23f, 1.0f));
         setColour(juce::Slider::ColourIds::textBoxHighlightColourId,
@@ -31,6 +32,13 @@ public:
             juce::Colour(0.08f, 0.18f, 0.42f, 1.0f));
         setColour(juce::Slider::ColourIds::textBoxTextColourId,
             juce::Colour(0.08f, 0.18f, 0.75f, 1.0f));
+
+        setColour(juce::TextButton::ColourIds::buttonColourId,
+            findColour(juce::Slider::ColourIds::textBoxBackgroundColourId));
+        setColour(juce::TextButton::ColourIds::textColourOffId,
+            findColour(juce::Slider::ColourIds::textBoxTextColourId));
+        setColour(juce::ComboBox::ColourIds::outlineColourId,
+                  findColour(juce::Slider::ColourIds::textBoxOutlineColourId));
     }
 
     void drawRotarySlider(juce::Graphics &g, int x, int y, int width, int height, float sliderPos,
