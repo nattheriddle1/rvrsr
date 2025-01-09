@@ -1,0 +1,8 @@
+- [ ] Add free-standing mode
+- [ ] Add volume-sensitive mode
+    - [ ] Parameter for sensitivity
+- [ ] Add phase for tempo-sync
+- [ ] Add post-EQ
+- [ ] Add declick
+    - [ ] Parameter for declick speed
+- [ ] Add self-delay parameter
